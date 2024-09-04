@@ -25,23 +25,38 @@ func sum(nums ...int) {
 	}
 	fmt.Println(total)
 }
+
+func activateGiftCard() func(int) int {
+	amount := 100
+	return func(debitAmount int) int {
+		amount -= debitAmount
+		return amount
+	}
+}
+
 func main() {
-	res := plus(1, 2)
-	fmt.Println(res)
+	// res := plus(1, 2)
+	// fmt.Println(res)
 
-	res = plusPlus(1, 2, 3)
-	fmt.Println(res)
+	// res = plusPlus(1, 2, 3)
+	// fmt.Println(res)
 
-	a, b := vals()
-	fmt.Println(a)
-	fmt.Println(b)
+	// a, b := vals()
+	// fmt.Println(a)
+	// fmt.Println(b)
 
-	_, c := vals()
-	fmt.Println(c)
+	// _, c := vals()
+	// fmt.Println(c)
 
-	sum(1, 2)
-	sum(1, 2, 3)
+	// sum(1, 2)
+	// sum(1, 2, 3)
 
-	nums := []int{1, 2, 3, 4}
-	sum(nums...)
+	// nums := []int{1, 2, 3, 4}
+	// sum(nums...)
+
+	useGiftCard1 := activateGiftCard()
+	useGiftCard2 := activateGiftCard()
+	fmt.Println(useGiftCard1(10))
+	fmt.Println(useGiftCard1(15))
+	fmt.Println(useGiftCard2(10))
 }
