@@ -55,8 +55,8 @@ func main() {
 	// sum(nums...)
 
 	useGiftCard1 := activateGiftCard()
-	useGiftCard2 := activateGiftCard()
+	//useGiftCard2 := activateGiftCard()
 	fmt.Println(useGiftCard1(10))
 	fmt.Println(useGiftCard1(15))
-	fmt.Println(useGiftCard2(10))
+	fmt.Println(useGiftCard1(10))
 }
